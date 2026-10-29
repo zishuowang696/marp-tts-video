@@ -1,0 +1,39 @@
+/* @theme douyin */
+@size 1080px 1920px;
+
+section {
+  width: 1080px;
+  height: 1920px;
+  background: #0b1020;
+  color: #f8fafc;
+  font-family: "Noto Sans CJK SC", "Noto Sans SC", sans-serif;
+  padding: 190px 96px 300px;
+  font-size: 58px;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 110px;
+  line-height: 1.15;
+  color: #ffffff;
+  margin: 0 0 50px;
+}
+
+h2 {
+  font-size: 86px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 60px;
+}
+
+p { margin: 0 0 34px; }
+strong { color: #38bdf8; }
+ul { margin: 0; padding-left: 56px; }
+li { margin: 26px 0; }
+
+blockquote {
+  border-left: 10px solid #38bdf8;
+  padding-left: 34px;
+  color: #cbd5e1;
+  font-size: 48px;
+}

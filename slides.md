@@ -1,21 +1,29 @@
 ---
 marp: true
-theme: default
-paginate: true
+theme: douyin
+paginate: false
 ---
 
-# MD + Marp + TTS
+# 别再拿横屏发抖音
 
-同一份 Markdown，驱动画面和口播
-
-<!-- TTS: 同一份 Markdown，既生成画面，也生成口播。 -->
+<!-- TTS: 别再拿横屏视频发抖音了。观众第一眼看到黑边，就划走了。 -->
 
 ---
 
-## 三个角色
+## 竖屏 9:16
 
-- Markdown：唯一源
-- Marp：渲染画面
-- TTS + ffmpeg：声音与合成
+- 1080 × 1920
+- 字幕留在安全区
+- 一页只说一件事
 
-<!-- TTS: Marp 负责画面，TTS 负责声音，ffmpeg 把两者合成视频。 -->
+<!-- TTS: 抖音要的是竖屏，1080 乘 1920。字幕放安全区，一页只讲一件事。 -->
+
+---
+
+## Markdown → 视频
+
+**Marp** 出画面  
+**edge-tts** 出口播  
+**ffmpeg** 合成
+
+<!-- TTS: 同一份 Markdown，Marp 出画面，edge-tts 出口播，ffmpeg 合成视频。 -->
