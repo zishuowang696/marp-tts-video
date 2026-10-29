@@ -29,6 +29,8 @@ python3 -m pip install --user edge-tts imageio-ffmpeg
 
 ```sh
 ./build.py
+# 指定输入/输出
+./build.py --input slides-vector.md --output out/vector.mp4
 # 关闭字幕
 ./build.py --no-captions
 # 指定声音

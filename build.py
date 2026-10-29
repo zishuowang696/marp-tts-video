@@ -101,21 +101,22 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
 def main() -> None:
     parser = argparse.ArgumentParser()
+    parser.add_argument("--input", default="slides.md")
     parser.add_argument("--voice", default="zh-CN-XiaoxiaoNeural")
     parser.add_argument("--output", default="out/final.mp4")
     parser.add_argument("--no-captions", action="store_true")
     args = parser.parse_args()
 
-    slides = split_slides((ROOT / "slides.md").read_text())
+    source = ROOT / args.input
+    slides = split_slides(source.read_text())
     texts = [tts_text(s, i) for i, s in enumerate(slides)]
     out = ROOT / "out"
     out.mkdir(exist_ok=True)
-    for old in out.glob("part*.mp4"):
-        old.unlink()
-    for old in out.glob("slide*.mp3"):
-        old.unlink()
+    for pattern in ("part*.mp4", "slide*.mp3", "slide*.srt", "slide*.ass", "slide.*.png"):
+        for old in out.glob(pattern):
+            old.unlink()
 
-    run(["bunx", "@marp-team/marp-cli", "slides.md", "--theme-set", "themes",
+    run(["bunx", "@marp-team/marp-cli", str(source), "--theme-set", "themes",
          "--images", "png", "--image-scale", "1", "--allow-local-files",
          "--output", "out/slide.png"])
 
